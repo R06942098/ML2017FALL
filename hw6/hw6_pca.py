@@ -29,7 +29,7 @@ def reconstruct():
     recon -= np.min(recon,0)
     recon /= np.max(recon,0)
     M = (recon*255).astype(np.uint8)
-    reco_num  = sys.argv[2].split('.')[0]
+    reco_num  = int(sys.argv[2].split('.')[0])
     reco = M[:,reco_num].reshape(600,600,3)
     io.imsave('reconstruction.jpg',reco)
 reconstruct()
