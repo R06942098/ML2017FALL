@@ -32,3 +32,4 @@ def reconstruct():
     reco_num  = sys.argv[2].split('.')[0]
     reco = M[:,reco_num].reshape(600,600,3)
     io.imsave('reconstruction.jpg',reco)
+reconstruct()
