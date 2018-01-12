@@ -13,6 +13,8 @@ from skimage import io
 
 def reconstruct():
     #train = preprocess()
+    temp = os.path.join(sys.argv[1],sys.argv[2])
+    reco = io.imread(temp).reshape(-1)[:,np.newaxis].astype('float32')
     b=os.listdir(sys.argv[1])
     a=[]
     for i in b:
@@ -21,15 +23,16 @@ def reconstruct():
     train = np.array(a).T
     mean = np.mean(train,axis=1)[:,np.newaxis]
     train_1 = train - mean
+    reco -= mean
     #train,train_1,U,s,v = Svd()
     U,s,v = np.linalg.svd(train_1,full_matrices=False)
     eigen_face = U[:,0:4]
-    temp = np.dot(eigen_face.T,train_1)
+    temp = np.dot(eigen_face.T,reco)
     recon = np.dot(eigen_face,temp) + mean
     recon -= np.min(recon,0)
     recon /= np.max(recon,0)
     M = (recon*255).astype(np.uint8)
-    reco_num  = int(sys.argv[2].split('.')[0])
-    reco = M[:,reco_num].reshape(600,600,3)
+    reco = M.reshape(600,600,3)
     io.imsave('reconstruction.jpg',reco)
 reconstruct()
+
