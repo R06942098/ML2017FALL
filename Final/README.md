@@ -35,12 +35,17 @@ Retrieval_based + co-attention
 ## diagram
 
  (1) pad zero to the post of training/testing data
+ 
  (2) siamese network : 
    * Mfcc -> no embedding layers
    * Caption -> pad_sequences -> embedding_layers
+
  (3) attention mechanism : dot(Mfcc, word vector of caption)
+
  (4) cosine similarity : dot(Mfcc,attention mechanism[flatten])
+
  (5) hinge loss margin : 0.2
+
  (6) simultaneously train contrastive and prediction model 
 
 ## keep in mind in the future
