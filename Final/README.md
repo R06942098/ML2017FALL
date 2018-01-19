@@ -15,6 +15,7 @@ Sklearn : from sklearn.model_selection import train_test_split SampleSubmission.
 
 jieba :  (1) import jieba 
 	 (2)jieba.set_dictionary(‘dict.txt.big’)
+=======
 
 gensim_Word2Vec : from gensim.models import Word2Vec
 ```
