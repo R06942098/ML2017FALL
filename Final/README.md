@@ -10,12 +10,12 @@ r06943121 蕭芳宗
 ```
 
 ## Used package
-```
+
 * Sklearn : from sklearn.model_selection import train_test_split SampleSubmission.csv
-* jieba :  * (1) import jieba 
-	       * (2)jieba.set_dictionary(‘dict.txt.big’)
+* jieba : 
+     * (1) import jieba 
+	 * (2)jieba.set_dictionary(‘dict.txt.big’)
 * gensim_Word2Vec : from gensim.models import Word2Vec
-```
 
 
 ## Compile 
@@ -33,15 +33,16 @@ Retrieval_based + co-attention
 
 
 ## diagram
-```
+
  (1) pad zero to the post of training/testing data
- (2) siamese network : Mfcc -> no embedding layers
-					Caption -> pad_sequences -> embedding_layers
+ (2) siamese network : 
+   * Mfcc -> no embedding layers
+   * Caption -> pad_sequences -> embedding_layers
  (3) attention mechanism : dot(Mfcc, word vector of caption)
  (4) cosine similarity : dot(Mfcc,attention mechanism[flatten])
  (5) hinge loss margin : 0.2
  (6) simultaneously train contrastive and prediction model 
-```
+
 ## keep in mind in the future
 
  * regularizer term : dropout / l2 / l2
