@@ -4,13 +4,13 @@
 *Team members :
 ```
 r06942098 曾柏偉 	r06942112 張嘉麟
-r06943124 王鈺凱	    r06943121 蕭芳宗
+r06943124 王鈺凱	r06943121 蕭芳宗
 ```
 
 ## Used package
 *Sklearn : from sklearn.model_selection import train_test_split SampleSubmission.csv
 
-*jieba :  import jieba
+*jieba :  import jieba \n
 	     jieba.set_dictionary(‘dict.txt.big’)
 
 *gensim_Word2Vec : from gensim.models import Word2Vec
