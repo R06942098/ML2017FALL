@@ -20,7 +20,10 @@ r06943121 蕭芳宗
 
 ## Compile 
 ```
-bash final.sh train.data train.caption test.data test.csv SampleSubmission.csv
+(1) bash final.sh train.data train.caption test.data test.csv SampleSubmission.csv
+
+(2) bash test.sh test.data test.csv SampleSubmission.csv
+
 ```
 
 
